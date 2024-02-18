@@ -1,0 +1,53 @@
+.outer-circle {
+  width: 100px;
+  height: 100px;
+  background: #151515;
+  box-shadow: 10px 10px 15px inset #090909,
+    -10px -10px 15px inset #181818;
+  border-radius: 100%;
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.outer-circle::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #151515;
+  box-shadow: 10px 10px 15px #090909,
+    -10px -10px 15px #181818;
+  border-radius: 100%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+.circle-holder {
+  width: 100%;
+  height: 25px;
+  z-index: 1;
+
+  animation-name: circle-spin;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes circle-spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.loading-4-circle {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  margin-top: 5px;
+  background: red;
+  box-shadow: 0px 0px 5px rgba(255, 0, 0, 1);
+  border-radius: 100%;
+}
